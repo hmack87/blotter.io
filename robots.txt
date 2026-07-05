@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.tradeblotter.app/sitemap.xml
+Sitemap: https://tradeblotter.app/sitemap.xml
