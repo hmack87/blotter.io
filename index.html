@@ -66,8 +66,11 @@
   <div data-screen-label="Hero" style="max-width:1080px;margin:0 auto;padding:76px 28px 26px;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,1fr);gap:56px;align-items:center;">
     <div>
       <div style="display:flex;align-items:center;gap:20px;margin-bottom:30px;">
-        <div style="width:92px;height:92px;flex:none;border-radius:25px;background:oklch(0.24 0.045 266);border:1px solid oklch(0.4 0.08 266);display:flex;align-items:center;justify-content:center;animation:logoBreathe 4.5s ease-in-out infinite;">
-          <svg width="50" height="50" viewBox="0 0 24 24"><path d="M12 2.8 L20.7 11.5 L3.3 11.5 Z" fill="oklch(0.78 0.16 158)"></path><path d="M3.3 12.9 L20.7 12.9 L12 21.6 Z" fill="oklch(0.68 0.17 26)"></path></svg>
+        <div style="position:relative;flex:none;display:flex;align-items:center;justify-content:center;">
+          <div style="position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(closest-side, oklch(0.42 0.11 266 / 0.2), transparent 72%);pointer-events:none;"></div>
+          <div style="position:relative;width:92px;height:92px;border-radius:25px;background:oklch(0.24 0.045 266);border:1px solid oklch(0.4 0.08 266);display:flex;align-items:center;justify-content:center;animation:logoBreathe 4.5s ease-in-out infinite;">
+            <svg width="50" height="50" viewBox="0 0 24 24"><path d="M12 2.8 L20.7 11.5 L3.3 11.5 Z" fill="oklch(0.78 0.16 158)"></path><path d="M3.3 12.9 L20.7 12.9 L12 21.6 Z" fill="oklch(0.68 0.17 26)"></path></svg>
+          </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:3px;">
           <span style="font-size:34px;font-weight:700;letter-spacing:-0.02em;line-height:1;">Blotter</span>
@@ -105,7 +108,10 @@
       </div>
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:13px 0;border-top:1px solid oklch(0.25 0.03 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:oklch(0.55 0.02 262);font-weight:600;">IMPORT</span>
-        <span style="font-size:13px;font-weight:600;color:oklch(0.88 0.008 258);">Auto-refresh &middot; CSV drop</span>
+        <span style="display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end;">
+          <span style="font-size:9.5px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:oklch(0.7 0.1 266);background:oklch(0.7 0.1 266 / 0.13);border:1px solid oklch(0.7 0.1 266 / 0.4);border-radius:999px;padding:2px 9px;">Auto-refresh</span>
+          <span style="font-size:9.5px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:oklch(0.78 0.16 158);background:oklch(0.78 0.16 158 / 0.12);border:1px solid oklch(0.78 0.16 158 / 0.38);border-radius:999px;padding:2px 9px;">CSV drop</span>
+        </span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:13px 0;border-top:1px solid oklch(0.25 0.03 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:oklch(0.55 0.02 262);font-weight:600;">MARKETS</span>
@@ -144,7 +150,7 @@
       <div style="flex:1;height:1px;background:oklch(0.25 0.03 264);"></div>
     </div>
     <div style="margin-top:24px;display:grid;grid-template-columns:1fr 48px 1.25fr 48px 1fr;align-items:stretch;">
-      <div style="border:1px solid oklch(0.29 0.033 264);border-radius:13px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;justify-content:center;">
+      <div style="border:1px solid oklch(0.29 0.033 264);border-radius:13px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;justify-content:center;transition:transform .2s ease, box-shadow .2s ease;" style-hover="transform:translateY(-2px);box-shadow:0 10px 28px oklch(0.08 0.02 264 / 0.45);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.12em;color:oklch(0.55 0.02 262);font-weight:600;">YOUR BROKER</span>
         <span style="font-size:15px;font-weight:700;">Interactive Brokers</span>
         <span style="font-size:12px;color:oklch(0.62 0.015 260);line-height:1.55;">Flex Web Service auto-refresh &mdash; or a CSV export</span>
@@ -153,7 +159,7 @@
         <svg width="28" height="12" viewBox="0 0 28 12" fill="none" stroke="oklch(0.5 0.03 264)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h24"></path><path d="M21 2l4 4-4 4"></path></svg>
         <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.08em;color:oklch(0.5 0.02 262);">AUTO / CSV</span>
       </div>
-      <div style="border:1px solid oklch(0.42 0.08 266);border-radius:13px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;background:oklch(0.19 0.038 265);">
+      <div style="border:1px solid oklch(0.42 0.08 266);border-radius:13px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;background:oklch(0.19 0.038 265);transition:transform .2s ease, box-shadow .2s ease;" style-hover="transform:translateY(-2px);box-shadow:0 12px 32px oklch(0.08 0.02 264 / 0.5);">
         <div style="display:flex;align-items:center;gap:8px;">
           <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2.8 L20.7 11.5 L3.3 11.5 Z" fill="oklch(0.78 0.16 158)"></path><path d="M3.3 12.9 L20.7 12.9 L12 21.6 Z" fill="oklch(0.68 0.17 26)"></path></svg>
           <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.12em;color:oklch(0.72 0.08 266);font-weight:600;">BLOTTER &mdash; IN YOUR BROWSER</span>
@@ -168,7 +174,7 @@
       <div style="display:flex;align-items:center;justify-content:center;">
         <svg width="28" height="12" viewBox="0 0 28 12" fill="none" stroke="oklch(0.5 0.03 264)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h24"></path><path d="M21 2l4 4-4 4"></path></svg>
       </div>
-      <div style="border:1px solid oklch(0.29 0.033 264);border-radius:13px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;justify-content:center;">
+      <div style="border:1px solid oklch(0.29 0.033 264);border-radius:13px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;justify-content:center;transition:transform .2s ease, box-shadow .2s ease;" style-hover="transform:translateY(-2px);box-shadow:0 10px 28px oklch(0.08 0.02 264 / 0.45);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.12em;color:oklch(0.55 0.02 262);font-weight:600;">YOUR REVIEW</span>
         <span style="font-size:15px;font-weight:700;">Calendar &middot; Trades &middot; Journal</span>
         <span style="font-size:12px;color:oklch(0.62 0.015 260);line-height:1.55;">Win/loss days, entry &rarr; exit, tags &amp; notes</span>
@@ -192,41 +198,41 @@
       <span style="font-size:12px;color:oklch(0.55 0.02 262);">No bloat &mdash; the seven things a daily review actually uses.</span>
     </div>
     <div style="margin-top:10px;">
-      <div style="display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 0;">
+      <a href="app.html#demo-calendar" title="See it in the live demo" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 14px;margin:0 -14px;border-radius:11px;transition:background .15s ease;" style-hover="background:oklch(0.19 0.032 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:oklch(0.48 0.02 262);">01</span>
-        <span style="font-size:15px;font-weight:700;">P&amp;L calendar</span>
+        <span style="font-size:15px;font-weight:700;">P&amp;L calendar <span style="font-size:11px;color:oklch(0.52 0.04 266);">&#8599;</span></span>
         <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;">Win and loss days at a glance, weekly totals, month P&amp;L &mdash; and a shareable calendar image.</span>
-      </div>
-      <div style="display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 0;border-top:1px solid oklch(0.24 0.03 264);">
+      </a>
+      <a href="app.html#demo-journal" title="See it in the live demo" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 14px;margin:0 -14px;border-radius:11px;border-top:1px solid oklch(0.24 0.03 264);transition:background .15s ease;" style-hover="background:oklch(0.19 0.032 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:oklch(0.48 0.02 262);">02</span>
-        <span style="font-size:15px;font-weight:700;">Daily journal &amp; tags</span>
+        <span style="font-size:15px;font-weight:700;">Daily journal &amp; tags <span style="font-size:11px;color:oklch(0.52 0.04 266);">&#8599;</span></span>
         <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;">The story of each session, tagged &mdash; A+ setups, FOMO, revenge trades &mdash; so the patterns surface.</span>
-      </div>
-      <div style="display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 0;border-top:1px solid oklch(0.24 0.03 264);">
+      </a>
+      <a href="app.html#demo-trades" title="See it in the live demo" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 14px;margin:0 -14px;border-radius:11px;border-top:1px solid oklch(0.24 0.03 264);transition:background .15s ease;" style-hover="background:oklch(0.19 0.032 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:oklch(0.48 0.02 262);">03</span>
-        <span style="font-size:15px;font-weight:700;">Complete trade log</span>
+        <span style="font-size:15px;font-weight:700;">Complete trade log <span style="font-size:11px;color:oklch(0.52 0.04 266);">&#8599;</span></span>
         <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;">Every round-trip: entry &rarr; exit, hold time, win/loss coloring and per-trade notes.</span>
-      </div>
-      <div style="display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 0;border-top:1px solid oklch(0.24 0.03 264);">
+      </a>
+      <a href="app.html#demo-setups" title="See it in the live demo" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 14px;margin:0 -14px;border-radius:11px;border-top:1px solid oklch(0.24 0.03 264);transition:background .15s ease;" style-hover="background:oklch(0.19 0.032 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:oklch(0.48 0.02 262);">04</span>
-        <span style="font-size:15px;font-weight:700;">Setup analytics</span>
+        <span style="font-size:15px;font-weight:700;">Setup analytics <span style="font-size:11px;color:oklch(0.52 0.04 266);">&#8599;</span></span>
         <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;">Tag each trade with its setup and see which ones actually pay you &mdash; win rate, net P&amp;L, count.</span>
-      </div>
-      <div style="display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 0;border-top:1px solid oklch(0.24 0.03 264);">
+      </a>
+      <a href="app.html#demo-equity" title="See it in the live demo" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 14px;margin:0 -14px;border-radius:11px;border-top:1px solid oklch(0.24 0.03 264);transition:background .15s ease;" style-hover="background:oklch(0.19 0.032 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:oklch(0.48 0.02 262);">05</span>
-        <span style="font-size:15px;font-weight:700;">Equity curve</span>
+        <span style="font-size:15px;font-weight:700;">Equity curve <span style="font-size:11px;color:oklch(0.52 0.04 266);">&#8599;</span></span>
         <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;">Cumulative P&amp;L across your whole history, with your worst peak-to-trough stretch marked.</span>
-      </div>
-      <div style="display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 0;border-top:1px solid oklch(0.24 0.03 264);">
+      </a>
+      <a href="app.html" title="Open Blotter" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 14px;margin:0 -14px;border-radius:11px;border-top:1px solid oklch(0.24 0.03 264);transition:background .15s ease;" style-hover="background:oklch(0.19 0.032 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:oklch(0.48 0.02 262);">06</span>
         <span style="font-size:15px;font-weight:700;">One-file backup</span>
         <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;">Export your whole journal &mdash; notes, tags, setups and data &mdash; as a single file. Restore it anywhere.</span>
-      </div>
-      <div style="display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 0;border-top:1px solid oklch(0.24 0.03 264);">
+      </a>
+      <a href="app.html" title="Set it up in the app" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 14px;margin:0 -14px;border-radius:11px;border-top:1px solid oklch(0.24 0.03 264);transition:background .15s ease;" style-hover="background:oklch(0.19 0.032 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:oklch(0.48 0.02 262);">07</span>
-        <span style="font-size:15px;font-weight:700;">Auto-refresh</span>
+        <span style="font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;">Auto-refresh <span style="font-size:9px;letter-spacing:0.07em;text-transform:uppercase;font-weight:700;color:oklch(0.7 0.1 266);background:oklch(0.7 0.1 266 / 0.13);border:1px solid oklch(0.7 0.1 266 / 0.4);border-radius:999px;padding:2px 8px;">Automated</span></span>
         <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;">Connect once with an IBKR Flex token &mdash; new trades arrive within minutes of the fill while Blotter is open, through an open-source, no-log relay.</span>
-      </div>
+      </a>
     </div>
   </div>
 
@@ -261,27 +267,27 @@
     </div>
     <div style="margin-top:10px;max-width:760px;">
       <details style="padding:16px 0;">
-        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;">Is Blotter really free?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;transition:color .15s ease;" style-hover="color:oklch(0.85 0.05 266);">Is Blotter really free?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
         <p style="margin:10px 0 2px;font-size:13px;color:oklch(0.66 0.015 260);line-height:1.65;">Yes &mdash; Blotter is free while in beta. No account, no card, no trial timer.</p>
       </details>
       <details style="padding:16px 0;border-top:1px solid oklch(0.24 0.03 264);">
-        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;">Where does my trading data go?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;transition:color .15s ease;" style-hover="color:oklch(0.85 0.05 266);">Where does my trading data go?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
         <p style="margin:10px 0 2px;font-size:13px;color:oklch(0.66 0.015 260);line-height:1.65;">Nowhere. Parsing happens in your browser and results are stored on your device. There&rsquo;s no server to send them to &mdash; we never see a single trade.</p>
       </details>
       <details style="padding:16px 0;border-top:1px solid oklch(0.24 0.03 264);">
-        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;">Which brokers are supported?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;transition:color .15s ease;" style-hover="color:oklch(0.85 0.05 266);">Which brokers are supported?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
         <p style="margin:10px 0 2px;font-size:13px;color:oklch(0.66 0.015 260);line-height:1.65;">Interactive Brokers today &mdash; both the one-click Transaction History CSV and Flex Query exports. More brokers will follow based on what early users ask for.</p>
       </details>
       <details style="padding:16px 0;border-top:1px solid oklch(0.24 0.03 264);">
-        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;">How does auto-refresh work &mdash; do you ever see my data?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;transition:color .15s ease;" style-hover="color:oklch(0.85 0.05 266);">How does auto-refresh work &mdash; do you ever see my data?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
         <p style="margin:10px 0 2px;font-size:13px;color:oklch(0.66 0.015 260);line-height:1.65;">Auto-refresh uses IBKR&rsquo;s Flex Web Service: you paste a query ID and a read-only reporting token, stored on your device. IBKR blocks direct browser connections, so the request passes through an open-source, stateless relay that keeps nothing &mdash; no logs, no storage, no accounts. Parsing and storage still happen in your browser. Blotter refreshes when you open it and every few minutes while it stays open, so new trades appear within minutes of the fill.</p>
       </details>
       <details style="padding:16px 0;border-top:1px solid oklch(0.24 0.03 264);">
-        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;">What instruments does it handle?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;transition:color .15s ease;" style-hover="color:oklch(0.85 0.05 266);">What instruments does it handle?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
         <p style="margin:10px 0 2px;font-size:13px;color:oklch(0.66 0.015 260);line-height:1.65;">Futures, options and stocks. Multi-currency accounts are converted to your base currency, and totals are checked against your statement&rsquo;s cash balances.</p>
       </details>
       <details style="padding:16px 0;border-top:1px solid oklch(0.24 0.03 264);">
-        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;">Can I move to a new computer or browser?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;transition:color .15s ease;" style-hover="color:oklch(0.85 0.05 266);">Can I move to a new computer or browser?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
         <p style="margin:10px 0 2px;font-size:13px;color:oklch(0.66 0.015 260);line-height:1.65;">Yes &mdash; Export backup produces one file with your journal, tags, setups and imported data. Restore it on the new machine and you&rsquo;re exactly where you left off.</p>
       </details>
     </div>
@@ -289,8 +295,11 @@
 
   <div data-screen-label="Final CTA" style="max-width:1080px;margin:0 auto;padding:84px 28px 76px;">
     <div style="border-top:1px solid oklch(0.25 0.03 264);padding-top:56px;display:flex;flex-direction:column;align-items:center;text-align:center;">
-      <div style="width:96px;height:96px;border-radius:26px;background:oklch(0.24 0.045 266);border:1px solid oklch(0.4 0.08 266);display:flex;align-items:center;justify-content:center;animation:logoBreathe 4.5s ease-in-out infinite;">
-        <svg width="52" height="52" viewBox="0 0 24 24"><path d="M12 2.8 L20.7 11.5 L3.3 11.5 Z" fill="oklch(0.78 0.16 158)"></path><path d="M3.3 12.9 L20.7 12.9 L12 21.6 Z" fill="oklch(0.68 0.17 26)"></path></svg>
+      <div style="position:relative;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(closest-side, oklch(0.42 0.11 266 / 0.18), transparent 72%);pointer-events:none;"></div>
+        <div style="position:relative;width:96px;height:96px;border-radius:26px;background:oklch(0.24 0.045 266);border:1px solid oklch(0.4 0.08 266);display:flex;align-items:center;justify-content:center;animation:logoBreathe 4.5s ease-in-out infinite;">
+          <svg width="52" height="52" viewBox="0 0 24 24"><path d="M12 2.8 L20.7 11.5 L3.3 11.5 Z" fill="oklch(0.78 0.16 158)"></path><path d="M3.3 12.9 L20.7 12.9 L12 21.6 Z" fill="oklch(0.68 0.17 26)"></path></svg>
+        </div>
       </div>
       <h2 style="margin:28px 0 0;font-size:26px;font-weight:700;letter-spacing:-0.02em;">See your own year of trading.</h2>
       <div style="margin-top:9px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:oklch(0.55 0.02 262);">free &middot; no signup &middot; about 30 seconds</div>
