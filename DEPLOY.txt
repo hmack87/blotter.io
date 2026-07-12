@@ -12,19 +12,39 @@ Your entire GitHub Pages repo root. The site is two pages:
 WHAT'S NEW IN THIS BUILD
 - IBKR auto-refresh (Flex Web Service). Connect once from the welcome
   screen's "Automated" card or the header/footer "Data & sync". New
-  trades flow in on open and every ~5 min while Blotter stays open.
-  Setup verifies all six Flex sections up front so a mis-built query is
-  caught with a precise fix instead of a silent failure.
-- The IBKR fetch is still a PROTOTYPE (returns sample data after a short
-  delay). Before this goes live you must stand up the open-source relay
-  and swap the transport in runFlexVerify()/flexAutoRefresh() inside the
-  source DC. The token is currently stored unencrypted in the browser —
-  add the passphrase encryption before shipping real credentials.
+  trades flow in on open and every ~5 min while Blotter stays open
+  (once the relay is live — see above). Setup validates the Query ID +
+  token format up front.
+- IBKR auto-refresh (Flex Web Service) — RELAY-READY BUILD. The connect
+  flow validates and saves the Query ID + token on-device. Whether it
+  fetches for real depends on one thing: the relay URL.
+    * No relay configured -> honest "relay pending" state everywhere
+      (chip, Data & sync, connect card). Never fakes data.
+    * Relay configured -> real fetches: verify does a live IBKR round-trip
+      (send -> poll -> parse -> reconcile), then auto-refresh runs on
+      open, on tab-return, and every 5 min while open. IBKR errors are
+      mapped to plain-language fixes (expired token, wrong query id, etc).
+  TO GO LIVE: deploy relay/worker.js (free Cloudflare Worker — steps in
+  relay/README.md), then in the app open Data & sync -> RELAY -> paste
+  the worker URL -> Save. (Welcome screen: "Data & sync ->" link on the
+  Auto-refresh card. Dashboard: footer link or header IBKR chip.)
+  That's it — no rebuild needed. To bake the URL
+  in for ALL users instead, ask Claude to set it as the default and
+  re-bundle.
+  A migration on load removes the sample dataset any earlier build saved
+  under "IBKR · auto", so affected testers drop back to the welcome
+  screen instead of seeing demo data as their own. The token is stored
+  unencrypted — add passphrase encryption before shipping real
+  credentials.
 - Live backup file (File System Access) + one-time download fallback.
 - Demo data is now a full year (Jul 2025 – Jun 2026, ~860 trades).
 - Landing page, FAQ, and structured data updated for auto-refresh.
 
 STEPS
+0. To turn on live IBKR sync: deploy the relay first — see relay/README.md
+   (free Cloudflare Worker, ~3 minutes, no tools needed). Then paste its
+   URL into the app under Data & sync -> RELAY. The relay/ folder is
+   included in this repo so the code is public — link it from the FAQ.
 1. In your repo, KEEP the CNAME file if one exists (it holds your custom
    domain). Do not delete it.
 2. Upload everything in this folder to the repo root, overwriting the old
