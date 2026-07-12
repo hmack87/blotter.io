@@ -15,21 +15,20 @@ WHAT'S NEW IN THIS BUILD
   trades flow in on open and every ~5 min while Blotter stays open
   (once the relay is live — see above). Setup validates the Query ID +
   token format up front.
-- IBKR auto-refresh (Flex Web Service) — RELAY-READY BUILD. The connect
-  flow validates and saves the Query ID + token on-device. Whether it
-  fetches for real depends on one thing: the relay URL.
-    * No relay configured -> honest "relay pending" state everywhere
-      (chip, Data & sync, connect card). Never fakes data.
-    * Relay configured -> real fetches: verify does a live IBKR round-trip
-      (send -> poll -> parse -> reconcile), then auto-refresh runs on
-      open, on tab-return, and every 5 min while open. IBKR errors are
-      mapped to plain-language fixes (expired token, wrong query id, etc).
-  TO GO LIVE: deploy relay/worker.js (free Cloudflare Worker — steps in
-  relay/README.md), then in the app open Data & sync -> RELAY -> paste
-  the worker URL -> Save. (Welcome screen: "Data & sync ->" link on the
-  Auto-refresh card. Dashboard: footer link or header IBKR chip.)
-  That's it — no rebuild needed. To bake the URL
-  in for ALL users instead, ask Claude to set it as the default and
+- IBKR auto-refresh (Flex Web Service) — LIVE. The official relay is
+  baked in (blotter-flex-relay.harry-m87.workers.dev), so users configure
+  NOTHING infrastructure-side. Their whole setup is: create the Flex
+  Query, enable Flex Web Service, paste Query ID + token into Blotter.
+  Verify does a real IBKR round-trip (send -> poll -> parse -> reconcile);
+  auto-refresh runs on open, on tab-return, and every 5 min while open.
+  IBKR errors map to plain-language fixes (expired token, wrong query
+  id, still-generating, etc).
+  The RELAY section in Data & sync is hidden for normal users. It only
+  appears when a self-hoster opens the app with #relay in the URL (e.g.
+  app.html#relay) or already has an override saved — they can route
+  through their own worker; clearing the field returns to the official
+  relay. If you later serve the relay from a custom domain (e.g.
+  relay.tradeblotter.app), ask Claude to update the baked-in default and
   re-bundle.
   A migration on load removes the sample dataset any earlier build saved
   under "IBKR · auto", so affected testers drop back to the welcome
@@ -41,10 +40,11 @@ WHAT'S NEW IN THIS BUILD
 - Landing page, FAQ, and structured data updated for auto-refresh.
 
 STEPS
-0. To turn on live IBKR sync: deploy the relay first — see relay/README.md
-   (free Cloudflare Worker, ~3 minutes, no tools needed). Then paste its
-   URL into the app under Data & sync -> RELAY. The relay/ folder is
-   included in this repo so the code is public — link it from the FAQ.
+0. Live IBKR sync works out of the box — the official relay
+   (blotter-flex-relay.harry-m87.workers.dev, running relay/worker.js)
+   is baked into app.html. Keep the relay/ folder in the repo so the
+   code is public — link it from the FAQ. Free tier covers ~500 heavy
+   daily users; upgrade at Cloudflare if invocations approach 100k/day.
 1. In your repo, KEEP the CNAME file if one exists (it holds your custom
    domain). Do not delete it.
 2. Upload everything in this folder to the repo root, overwriting the old
