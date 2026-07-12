@@ -1,0 +1,48 @@
+BLOTTER DEPLOY — www.tradeblotter.app
+======================================
+Updated 2026-07-12
+
+WHAT THIS FOLDER IS
+Your entire GitHub Pages repo root. The site is two pages:
+  index.html    -> landing page (SEO + live demo embed)
+  app.html      -> the Blotter app itself
+  support.js    -> runtime the landing page loads (index.html needs it;
+                   app.html is self-contained and does NOT)
+
+WHAT'S NEW IN THIS BUILD
+- IBKR auto-refresh (Flex Web Service). Connect once from the welcome
+  screen's "Automated" card or the header/footer "Data & sync". New
+  trades flow in on open and every ~5 min while Blotter stays open.
+  Setup verifies all six Flex sections up front so a mis-built query is
+  caught with a precise fix instead of a silent failure.
+- The IBKR fetch is still a PROTOTYPE (returns sample data after a short
+  delay). Before this goes live you must stand up the open-source relay
+  and swap the transport in runFlexVerify()/flexAutoRefresh() inside the
+  source DC. The token is currently stored unencrypted in the browser —
+  add the passphrase encryption before shipping real credentials.
+- Live backup file (File System Access) + one-time download fallback.
+- Demo data is now a full year (Jul 2025 – Jun 2026, ~860 trades).
+- Landing page, FAQ, and structured data updated for auto-refresh.
+
+STEPS
+1. In your repo, KEEP the CNAME file if one exists (it holds your custom
+   domain). Do not delete it.
+2. Upload everything in this folder to the repo root, overwriting the old
+   files:
+     index.html, app.html, support.js, og.png, robots.txt, sitemap.xml
+3. Wait ~1 minute for Pages to rebuild, then hard-refresh
+   (Cmd/Ctrl+Shift+R) on:
+     https://www.tradeblotter.app/         -> landing page
+     https://www.tradeblotter.app/app.html -> the app
+4. Re-scan https://www.opengraph.xyz for both URLs.
+
+NOTES
+- Existing testers' data is safe: browser storage is per-domain, not
+  per-page, so journals survive this update.
+- The landing's "live demo" panel embeds app.html#demo — the app opens
+  straight into sample data via that link. Use
+  https://www.tradeblotter.app/app.html#demo in Reddit/X posts.
+- Auto-refresh + live backup use browser APIs (File System Access) that
+  need a real https:// origin — they work on the deployed site and in
+  Chrome/Edge; other browsers get the download fallback.
+- Google Search Console: resubmit sitemap.xml once deployed.

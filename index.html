@@ -4,24 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Blotter — Free, private trading journal for IBKR</title>
-<meta name="description" content="Free, private trading journal for Interactive Brokers. Import your IBKR CSV for a P&amp;L calendar, trade log and journal. No signup, nothing leaves your browser.">
+<meta name="description" content="Free, private trading journal for Interactive Brokers. Connect once for auto-refresh — or import your IBKR CSV — for a P&amp;L calendar, trade log and journal. No signup, no account.">
 <link rel="canonical" href="https://www.tradeblotter.app/">
 <meta name="theme-color" content="#10182b">
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.8 L20.7 11.5 L3.3 11.5 Z" fill="%2334d399"/><path d="M3.3 12.9 L20.7 12.9 L12 21.6 Z" fill="%23f87171"/></svg>'>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Blotter">
 <meta property="og:title" content="Blotter — Free, private trading journal for IBKR">
-<meta property="og:description" content="Import your IBKR CSV for a P&amp;L calendar, equity curve and daily journal. No signup, no upload — 100% private.">
+<meta property="og:description" content="Connect IBKR once for auto-refresh — or drop a CSV. P&amp;L calendar, equity curve and daily journal. No signup — 100% private.">
 <meta property="og:url" content="https://www.tradeblotter.app/">
 <meta property="og:image" content="https://www.tradeblotter.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Blotter — Free, private trading journal for IBKR">
-<meta name="twitter:description" content="Import your IBKR CSV for a P&amp;L calendar, equity curve and daily journal. No signup, no upload — 100% private.">
+<meta name="twitter:description" content="Connect IBKR once for auto-refresh — or drop a CSV. P&amp;L calendar, equity curve and daily journal. No signup — 100% private.">
 <meta name="twitter:image" content="https://www.tradeblotter.app/og.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Blotter","url":"https://www.tradeblotter.app/","applicationCategory":"FinanceApplication","operatingSystem":"Any (web browser)","description":"Free, private trading journal for Interactive Brokers. P&L calendar, trade log and daily journal, parsed entirely in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Blotter really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Blotter is free while in beta. No account, no card, no trial timer."}},{"@type":"Question","name":"Where does my trading data go?","acceptedAnswer":{"@type":"Answer","text":"Nowhere. Parsing happens in your browser and results are stored on your device. There is no server to send them to."}},{"@type":"Question","name":"Which brokers are supported?","acceptedAnswer":{"@type":"Answer","text":"Interactive Brokers today — both the Transaction History CSV and Flex Query exports. More brokers will follow based on early-user feedback."}},{"@type":"Question","name":"What instruments does it handle?","acceptedAnswer":{"@type":"Answer","text":"Futures, options and stocks. Multi-currency accounts are converted to your base currency and totals are checked against your statement's cash balances."}},{"@type":"Question","name":"Can I move to a new computer or browser?","acceptedAnswer":{"@type":"Answer","text":"Yes — Export backup produces one file with your journal, tags, setups and imported data. Restore it on the new machine to pick up where you left off."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Blotter really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Blotter is free while in beta. No account, no card, no trial timer."}},{"@type":"Question","name":"Where does my trading data go?","acceptedAnswer":{"@type":"Answer","text":"Nowhere. Parsing happens in your browser and results are stored on your device. There is no server to send them to."}},{"@type":"Question","name":"Which brokers are supported?","acceptedAnswer":{"@type":"Answer","text":"Interactive Brokers today — both the Transaction History CSV and Flex Query exports. More brokers will follow based on early-user feedback."}},{"@type":"Question","name":"What instruments does it handle?","acceptedAnswer":{"@type":"Answer","text":"Futures, options and stocks. Multi-currency accounts are converted to your base currency and totals are checked against your statement's cash balances."}},{"@type":"Question","name":"How does auto-refresh work?","acceptedAnswer":{"@type":"Answer","text":"Paste an IBKR Flex Web Service query ID and read-only token, stored on your device. IBKR blocks direct browser connections, so requests pass through an open-source, stateless relay that keeps nothing — no logs, no storage, no accounts. Parsing and storage happen in your browser. Blotter refreshes on open and every few minutes while open, so new trades appear within minutes of the fill."}},{"@type":"Question","name":"Can I move to a new computer or browser?","acceptedAnswer":{"@type":"Answer","text":"Yes — Export backup produces one file with your journal, tags, setups and imported data. Restore it on the new machine to pick up where you left off."}}]}</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -76,7 +76,7 @@
       </div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:oklch(0.58 0.02 262);font-weight:600;">A TRADING JOURNAL THAT RUNS IN YOUR BROWSER</div>
       <h1 style="margin:16px 0 0;font-size:50px;font-weight:700;letter-spacing:-0.03em;line-height:1.07;">Every trading day, on one calendar.</h1>
-      <p style="margin:18px 0 0;font-size:15.5px;color:oklch(0.66 0.015 260);line-height:1.65;max-width:520px;">Import your Interactive Brokers statement. Get a P&amp;L calendar, a complete trade log, and a daily journal &mdash; parsed on your machine. Nothing is uploaded, ever.</p>
+      <p style="margin:18px 0 0;font-size:15.5px;color:oklch(0.66 0.015 260);line-height:1.65;max-width:520px;">Connect your Interactive Brokers account once &mdash; or drop in a CSV. Get a P&amp;L calendar, a complete trade log, and a daily journal that stay current on their own while you trade &mdash; parsed on your machine, stored on your device.</p>
       <div style="display:flex;align-items:center;gap:12px;margin-top:28px;">
         <a href="app.html" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:oklch(0.42 0.11 266);border:1px solid oklch(0.55 0.12 266);border-radius:10px;color:oklch(0.98 0.01 266);font-size:14.5px;font-weight:700;" style-hover="background:oklch(0.47 0.12 266);">Open Blotter &mdash; free</a>
         <a href="app.html#demo" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:transparent;border:1px solid oklch(0.32 0.03 264);border-radius:10px;color:oklch(0.8 0.012 258);font-size:14.5px;font-weight:600;" style-hover="background:oklch(0.21 0.032 264);border-color:oklch(0.42 0.06 266);">View the live demo</a>
@@ -104,8 +104,8 @@
         <span style="font-size:13px;font-weight:600;color:oklch(0.88 0.008 258);">Interactive Brokers</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:13px 0;border-top:1px solid oklch(0.25 0.03 264);">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:oklch(0.55 0.02 262);font-weight:600;">FORMATS</span>
-        <span style="font-size:13px;font-weight:600;color:oklch(0.88 0.008 258);">Statement CSV &middot; Flex Query</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:oklch(0.55 0.02 262);font-weight:600;">IMPORT</span>
+        <span style="font-size:13px;font-weight:600;color:oklch(0.88 0.008 258);">Auto-refresh &middot; CSV drop</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:13px 0;border-top:1px solid oklch(0.25 0.03 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:oklch(0.55 0.02 262);font-weight:600;">MARKETS</span>
@@ -140,18 +140,18 @@
 
   <div data-screen-label="Flow" style="max-width:1080px;margin:0 auto;padding:44px 28px 0;">
     <div style="display:flex;align-items:center;gap:14px;">
-      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:oklch(0.55 0.02 262);font-weight:600;">FROM CSV TO CALENDAR</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:oklch(0.55 0.02 262);font-weight:600;">FROM IBKR TO CALENDAR</span>
       <div style="flex:1;height:1px;background:oklch(0.25 0.03 264);"></div>
     </div>
     <div style="margin-top:24px;display:grid;grid-template-columns:1fr 48px 1.25fr 48px 1fr;align-items:stretch;">
       <div style="border:1px solid oklch(0.29 0.033 264);border-radius:13px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;justify-content:center;">
         <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.12em;color:oklch(0.55 0.02 262);font-weight:600;">YOUR BROKER</span>
         <span style="font-size:15px;font-weight:700;">Interactive Brokers</span>
-        <span style="font-size:12px;color:oklch(0.62 0.015 260);line-height:1.55;">Statement CSV or Flex Query export</span>
+        <span style="font-size:12px;color:oklch(0.62 0.015 260);line-height:1.55;">Flex Web Service auto-refresh &mdash; or a CSV export</span>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;">
         <svg width="28" height="12" viewBox="0 0 28 12" fill="none" stroke="oklch(0.5 0.03 264)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h24"></path><path d="M21 2l4 4-4 4"></path></svg>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.08em;color:oklch(0.5 0.02 262);">CSV</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.08em;color:oklch(0.5 0.02 262);">AUTO / CSV</span>
       </div>
       <div style="border:1px solid oklch(0.42 0.08 266);border-radius:13px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;background:oklch(0.19 0.038 265);">
         <div style="display:flex;align-items:center;gap:8px;">
@@ -159,7 +159,7 @@
           <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.12em;color:oklch(0.72 0.08 266);font-weight:600;">BLOTTER &mdash; IN YOUR BROWSER</span>
         </div>
         <span style="font-size:15px;font-weight:700;">Parsed on your machine</span>
-        <span style="font-size:12px;color:oklch(0.62 0.015 260);line-height:1.55;">About a second &middot; futures, options &amp; stocks &middot; saved to your device</span>
+        <span style="font-size:12px;color:oklch(0.62 0.015 260);line-height:1.55;">Refreshes on its own while open &middot; futures, options &amp; stocks &middot; saved to your device</span>
         <div style="display:flex;align-items:center;gap:8px;margin-top:5px;padding-top:10px;border-top:1px dashed oklch(0.31 0.035 264);">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H7a4 4 0 1 1 .9-7.9 5.5 5.5 0 0 1 10.4 1.6 3.5 3.5 0 0 1-.8 6.3z" stroke="oklch(0.5 0.02 262)" stroke-width="1.7"></path><path d="M4 21L20 4" stroke="oklch(0.62 0.14 26)" stroke-width="1.9"></path></svg>
           <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.08em;color:oklch(0.6 0.02 262);">NO SERVER &middot; NO UPLOAD</span>
@@ -189,7 +189,7 @@
     <div style="display:flex;align-items:center;gap:14px;">
       <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:oklch(0.55 0.02 262);font-weight:600;">WHAT'S INSIDE</span>
       <div style="flex:1;height:1px;background:oklch(0.25 0.03 264);"></div>
-      <span style="font-size:12px;color:oklch(0.55 0.02 262);">No bloat &mdash; the six things a daily review actually uses.</span>
+      <span style="font-size:12px;color:oklch(0.55 0.02 262);">No bloat &mdash; the seven things a daily review actually uses.</span>
     </div>
     <div style="margin-top:10px;">
       <div style="display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 0;">
@@ -222,6 +222,11 @@
         <span style="font-size:15px;font-weight:700;">One-file backup</span>
         <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;">Export your whole journal &mdash; notes, tags, setups and data &mdash; as a single file. Restore it anywhere.</span>
       </div>
+      <div style="display:grid;grid-template-columns:56px 230px 1fr;gap:18px;align-items:baseline;padding:17px 0;border-top:1px solid oklch(0.24 0.03 264);">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:oklch(0.48 0.02 262);">07</span>
+        <span style="font-size:15px;font-weight:700;">Auto-refresh</span>
+        <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;">Connect once with an IBKR Flex token &mdash; new trades arrive within minutes of the fill while Blotter is open, through an open-source, no-log relay.</span>
+      </div>
     </div>
   </div>
 
@@ -233,13 +238,13 @@
     <div style="margin-top:24px;background:oklch(0.185 0.031 264);border:1px solid oklch(0.27 0.032 264);border-radius:13px;padding:8px 24px;">
       <div style="display:grid;grid-template-columns:34px 96px 1fr;gap:16px;align-items:baseline;padding:15px 0;">
         <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:oklch(0.72 0.08 266);font-weight:700;">1</span>
-        <span style="font-size:14px;font-weight:700;">Export</span>
-        <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;font-family:'JetBrains Mono',monospace;">IBKR &rarr; Performance &amp; Reports &rarr; Statements &rarr; Transaction History (CSV) &mdash; or a Flex Query for exact timestamps. The in-app guide covers both.</span>
+        <span style="font-size:14px;font-weight:700;">Connect</span>
+        <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;font-family:'JetBrains Mono',monospace;">Create an IBKR Flex Query once and paste its ID + token into Blotter &mdash; or keep dropping the Transaction History CSV. The in-app guide covers both.</span>
       </div>
       <div style="display:grid;grid-template-columns:34px 96px 1fr;gap:16px;align-items:baseline;padding:15px 0;border-top:1px solid oklch(0.24 0.03 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:oklch(0.72 0.08 266);font-weight:700;">2</span>
-        <span style="font-size:14px;font-weight:700;">Import</span>
-        <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;font-family:'JetBrains Mono',monospace;">Drag the file anywhere onto Blotter. Parsed locally in about a second.</span>
+        <span style="font-size:14px;font-weight:700;">Open</span>
+        <span style="font-size:13px;color:oklch(0.63 0.015 260);line-height:1.6;font-family:'JetBrains Mono',monospace;">Blotter refreshes when it opens and every few minutes while it's up &mdash; new trades appear within minutes of the fill, parsed in your browser.</span>
       </div>
       <div style="display:grid;grid-template-columns:34px 96px 1fr;gap:16px;align-items:baseline;padding:15px 0;border-top:1px solid oklch(0.24 0.03 264);">
         <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:oklch(0.72 0.08 266);font-weight:700;">3</span>
@@ -266,6 +271,10 @@
       <details style="padding:16px 0;border-top:1px solid oklch(0.24 0.03 264);">
         <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;">Which brokers are supported?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
         <p style="margin:10px 0 2px;font-size:13px;color:oklch(0.66 0.015 260);line-height:1.65;">Interactive Brokers today &mdash; both the one-click Transaction History CSV and Flex Query exports. More brokers will follow based on what early users ask for.</p>
+      </details>
+      <details style="padding:16px 0;border-top:1px solid oklch(0.24 0.03 264);">
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;">How does auto-refresh work &mdash; do you ever see my data?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
+        <p style="margin:10px 0 2px;font-size:13px;color:oklch(0.66 0.015 260);line-height:1.65;">Auto-refresh uses IBKR&rsquo;s Flex Web Service: you paste a query ID and a read-only reporting token, stored on your device. IBKR blocks direct browser connections, so the request passes through an open-source, stateless relay that keeps nothing &mdash; no logs, no storage, no accounts. Parsing and storage still happen in your browser. Blotter refreshes when you open it and every few minutes while it stays open, so new trades appear within minutes of the fill.</p>
       </details>
       <details style="padding:16px 0;border-top:1px solid oklch(0.24 0.03 264);">
         <summary style="display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:700;">What instruments does it handle?<span style="color:oklch(0.55 0.02 262);font-size:18px;font-weight:400;">+</span></summary>
