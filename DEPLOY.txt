@@ -14,6 +14,9 @@ WHAT'S NEW IN THIS BUILD
   your Flex Query" -> "Step 2 of 2 · Turn on auto-refresh". The old
   "Quickest" Transaction History card is gone — those CSVs still import
   fine (the parser is unchanged); a footnote under the cards says so.
+  The header logo/wordmark on the welcome screen links back to the
+  landing page (href "./"); on the dashboard it stays inert so the
+  landing's embedded demo can't navigate itself.
 - Activity log in Data & sync: every meaningful sync event — new
   trades pulled by auto-refresh (with the days affected), CSV imports,
   connect/disconnect, and refresh errors — last 30 events, stored on
