@@ -10,6 +10,13 @@ Your entire GitHub Pages repo root. The site is two pages:
                    app.html is self-contained and does NOT)
 
 WHAT'S NEW IN THIS BUILD
+- v0.9.1-beta: four parser fixes synced from the 2026-07-13 production
+  hot-patch — thousands-separator amounts ("1,234.56") parse correctly
+  in both parsers; 1–2 char futures roots aggregate (ESU5/ESZ5 -> ES,
+  6EU5 -> 6E); Withdrawal/EFT roll into deposits and Credit Interest
+  into fees; any unrecognized row type is collected into a new
+  `unrecognized` field (never silently dropped) and surfaced as a muted
+  ⚠ line in the Cash reconciliation card.
 - Welcome screen simplified to ONE setup path: "Step 1 of 2 · Create
   your Flex Query" -> "Step 2 of 2 · Turn on auto-refresh". The old
   "Quickest" Transaction History card is gone — those CSVs still import
