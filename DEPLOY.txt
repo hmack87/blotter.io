@@ -10,11 +10,15 @@ Your entire GitHub Pages repo root. The site is two pages:
                    app.html is self-contained and does NOT)
 
 WHAT'S NEW IN THIS BUILD
-- IBKR auto-refresh (Flex Web Service). Connect once from the welcome
-  screen's "Automated" card or the header/footer "Data & sync". New
-  trades flow in on open and every ~5 min while Blotter stays open
-  (once the relay is live — see above). Setup validates the Query ID +
-  token format up front.
+- Welcome screen simplified to ONE setup path: "Step 1 of 2 · Create
+  your Flex Query" -> "Step 2 of 2 · Turn on auto-refresh". The old
+  "Quickest" Transaction History card is gone — those CSVs still import
+  fine (the parser is unchanged); a footnote under the cards says so.
+- Activity log in Data & sync: every meaningful sync event — new
+  trades pulled by auto-refresh (with the days affected), CSV imports,
+  connect/disconnect, and refresh errors — last 30 events, stored on
+  this device only (tz_sync_log). Header shows LAST CHECKED so users
+  can confirm the automation is alive without reading the log.
 - IBKR auto-refresh (Flex Web Service) — LIVE. The official relay is
   baked in (blotter-flex-relay.harry-m87.workers.dev), so users configure
   NOTHING infrastructure-side. Their whole setup is: create the Flex
