@@ -10,6 +10,35 @@ Your entire GitHub Pages repo root. The site is two pages:
                    app.html is self-contained and does NOT)
 
 WHAT'S NEW IN THIS BUILD
+- v0.9.2-beta — LIVE INTRADAY (opt-in). A second IBKR query type (Trade
+  Confirmation Flex Query) delivers executions ~5–10 min after the
+  fill. Setup: Data & sync -> LIVE INTRADAY -> paste the confirm
+  query's ID (same token, same relay). Today then renders as a live,
+  unreconciled layer: pulsing TODAY · LIVE strip above the calendar
+  (realized-only P&L, open positions marked "P&L at close" — no fake
+  unrealized numbers), dashed provisional today-cell, toast + bell on
+  each closed round-trip. Polls every 10 min while open, weekdays
+  06:00–17:30 CT only, with backoff. Tonight's statement remains the
+  source of truth — on arrival it replaces the live layer and logs the
+  fees/FX delta. Keys: tz_intraday_v1 (config), tz_live_v1 (snapshot).
+- Statement-aware refresh: per IBKR's docs, Activity Flex data updates
+  ONCE daily at close of business — so Blotter now fetches on open and
+  then schedules the next check for ~6:30am local (when overnight
+  statements are ready), instead of polling all day. "Not ready"
+  retries at 30/60 min; real errors pause an hour. Copy across the app
+  and landing now says "overnight statement, pulled on open" instead of
+  "within minutes". Manual Refresh now still works anytime.
+- Gentler auto-refresh: checks on open, then every ~15 min (was 5),
+  backing off to 30/60 min when IBKR is slow or throttling. "Statement
+  not ready yet" is no longer treated as a failure — it logs as a gray
+  "checking again later" note, never badges the bell, and never says
+  "failed". Only real errors (bad token, wrong query id, etc.) show red.
+- Notification bell in the dashboard header: shows a badge with the
+  count of unseen sync events (green for new trades, red if a refresh
+  error is among them). Click opens a SYNC ACTIVITY dropdown with the
+  last 8 events; opening marks them seen (tz_notif_seen). "Full
+  history" jumps to Data & sync. Quiet by design — no browser
+  notifications, no sound; "no new trades" polls never badge.
 - v0.9.1-beta: four parser fixes synced from the 2026-07-13 production
   hot-patch — thousands-separator amounts ("1,234.56") parse correctly
   in both parsers; 1–2 char futures roots aggregate (ESU5/ESZ5 -> ES,
